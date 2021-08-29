@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "postgresql": {
+    "host": "indoor-localisation.clebjm5otlkj.ap-southeast-1.rds.amazonaws.com",
+    "port": 5432,
+    "database": "indoor-localization-2.0",
+    "password": "postgres",
+    "name": "postgresql",
+    "connector": "postgresql",
+    "user": "macpro"
+  }
+}

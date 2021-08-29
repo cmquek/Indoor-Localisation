@@ -1,0 +1,51 @@
+{
+  "webServer": {
+    "ip":                     "52.77.184.100",
+    "port":                   3001
+  },
+  "apiServer": {
+    "rest": {
+      "url":                  "http://52.77.184.100:3000/api"
+    },
+    "graphql": {
+      "url":                  "http://52.77.184.100:3000/graphql"
+    }
+  },
+  "elkServer": {
+    "url":                    "http://localhost:9200"
+  },
+  "pgServer": {
+    "user":                   "macpro",
+    "database":               "indoor-localization-2.0",
+    "password":               "",
+    "host":                   "localhost",
+    "port":                   5432
+  },
+  "zmqSockets": {
+    "anchorData": {
+      "pushpull":             "tcp://54.179.193.123:5566"
+    },
+    "beaconData": {
+      "pushpull":             "tcp://54.179.193.123:5556"
+    },
+    "broker": {
+      "xpub":                 "tcp://54.179.193.123:5567",
+      "xsub":                 "tcp://54.179.193.123:5568",
+      "router":               "tcp://54.179.193.123:5570",
+      "dealer":               "tcp://54.179.193.123:5571"
+    },
+    "serverRequests": {
+      "reqrep":               "tcp://54.179.193.123:5569"
+    }
+  },
+  "notifications": {
+    "databaseUpdate":         "DATABASE_UPDATE",
+    "cacheUpdate":            "CACHE_UPDATE",
+    "cacheRequest":           "CACHE_REQUEST",
+    "serverHeartBeat":        "SERVER_HEARTBEAT",
+    "anchorStatus":           "ANCHOR_STATUS",
+    "anchorCommand":          "ANCHOR_COMMAND",
+    "connectGattRequest":     "CONNECT_GATT_REQUEST",
+    "positionUpdate":         "POSITION_UPDATE"
+  }
+}
