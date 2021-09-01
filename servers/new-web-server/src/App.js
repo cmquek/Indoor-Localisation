@@ -6,6 +6,8 @@ import Drawer from './components/layout/Drawer'
 import Devices from './pages/Devices'
 import Maps from './pages/Maps'
 import Locate from './pages/Locate'
+import Login from './pages/Login'
+import Register from './pages/Register'
 
 class App extends Component {
   render() {
@@ -18,6 +20,8 @@ class App extends Component {
               <Route path='/Devices' component={Devices} />
               <Route path='/Maps' component={Maps} />
               <Route path='/Locate' component={Locate} />
+              <Route path='/Login' component={Login} />
+              <Route path='/Register' component={Register} />
             </Switch>
         </div>
       </BrowserRouter>

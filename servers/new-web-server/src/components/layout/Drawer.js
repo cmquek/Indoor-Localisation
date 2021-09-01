@@ -19,6 +19,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DeviceIcon from '@material-ui/icons/Bluetooth'
 import MapIcon from '@material-ui/icons/NearMe'
 import LocateIcon from '@material-ui/icons/PersonPin'
+import PermIdentityIcon from '@material-ui/icons/PermIdentity';
+import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
 
 const drawerWidth = 240;
 
@@ -81,55 +83,56 @@ class PersistentDrawerLeft extends Component {
     const { classes, theme } = this.props;
     const { open } = this.state;
     return (
-        <nav className="nav-wrapper grey darken-3">
-            <div className={classes.root}>
-                <CssBaseline />
-                <AppBar
-                    position="fixed"
-                    className={classNames(classes.appBar, {
-                        [classes.appBarShift]: open,
-                    })}>
-                    <Toolbar disableGutters={!open}>
-                      <IconButton
-                        color="inherit"
-                        aria-label="Open drawer"
-                        onClick={this.handleDrawerOpen}
-                        className={classNames(classes.menuButton, open && classes.hide)}
-                        >
-                        <MenuIcon />
-                        </IconButton>
-                        <Typography component={Link} to='/' variant="h6" color="inherit">
-                            Device Server
-                        </Typography>
-                        {/* <MapTools /> */}
-                    </Toolbar>
-                </AppBar>
-                <Drawer
-                    className={classes.drawer}
-                    variant="persistent"
-                    anchor="left"
-                    open={open}
-                    classes={{
-                        paper: classes.drawerPaper,
-                    }}>
-                    <div className={classes.drawerHeader}>
-                        <IconButton onClick={this.handleDrawerClose}>
-                            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                        </IconButton>
-                    </div>
-                    <Divider />
-                    <List>
-                        {['Maps', 'Devices', 'Locate'].map((text, index) => (
-                        <ListItem button key={text} component={Link} to={'/' + text}>
-                            <ListItemIcon>{index === 0 ? <MapIcon /> : index === 1 ? <DeviceIcon /> : <LocateIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                        ))}
-                    </List>
-                    <Divider />
-                </Drawer>
+      <nav className="nav-wrapper grey darken-3">
+        <div className={classes.root}>
+          <CssBaseline />
+          <AppBar
+            position="fixed"
+            className={classNames(classes.appBar, {
+              [classes.appBarShift]: open,
+            })}>
+            <Toolbar disableGutters={!open}>
+              <IconButton
+                color="inherit"
+                aria-label="Open drawer"
+                onClick={this.handleDrawerOpen}
+                className={classNames(classes.menuButton, open && classes.hide)}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography component={Link} to='/' variant="h6" color="inherit">
+                {/* Device Server */}
+                HOW TO MAKE THIS CHANGE ACCORDING TO THE URL???
+              </Typography>
+              {/* <MapTools /> */}
+            </Toolbar>
+          </AppBar>
+          <Drawer
+            className={classes.drawer}
+            variant="persistent"
+            anchor="left"
+            open={open}
+            classes={{
+              paper: classes.drawerPaper,
+            }}>
+            <div className={classes.drawerHeader}>
+              <IconButton onClick={this.handleDrawerClose}>
+                {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+              </IconButton>
             </div>
-        </nav>
+            <Divider />
+            <List>
+              {['Login', 'Maps', 'Devices', 'Locate', 'Register'].map((text, index) => (
+                <ListItem button key={text} component={Link} to={'/' + text} onClick={this.handleDrawerClose}>
+                  <ListItemIcon>{index === 0 ? <PermIdentityIcon /> : index === 1 ? <MapIcon /> : index === 2 ? <DeviceIcon /> : index === 3 ? <LocateIcon /> : <FormatAlignJustifyIcon />}</ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItem>
+              ))}
+            </List>
+            <Divider />
+          </Drawer>
+        </div>
+      </nav>
     );
   }
 }

@@ -1,0 +1,35 @@
+.loginText {
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+.loginMessage {
+    margin-top: 10vh;
+    margin: 0 auto;
+    align-items: center;
+}
+
+form{
+    background: white;
+    border: 1px solid #dedede;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 720px;
+    min-height: 320px;
+    padding: 30px 50px;
+}
+
+.formContainer{
+    margin: 0 auto;
+    padding-top: 10px;
+    max-width: 1080px;
+    max-height: 1080px;
+}
+
+.successMessage {
+    color: green;
+    font-weight: bold;
+}
